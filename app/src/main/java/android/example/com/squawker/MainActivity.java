@@ -97,7 +97,11 @@ public class MainActivity extends AppCompatActivity implements
             Log.d(LOG_TAG, "Contains: " + extras.getString("test"));
         }
 
-        Log.d(LOG_TAG, "Firebase log is: " + FirebaseInstanceId.getInstance().getToken());
+        // Get token from the ID Service you created and show it in a log
+        String token = FirebaseInstanceId.getInstance().getToken();
+        String msg = getString(R.string.message_token_format, token);
+        Log.d(LOG_TAG, msg);
+
     }
 
     @Override
